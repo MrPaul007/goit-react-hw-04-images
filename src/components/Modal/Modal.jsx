@@ -13,11 +13,7 @@ function Modal({close, children}) {
 
     const handleClose = (e) => {
         console.log("heh")
-        if(e.target === e.currentTarget) {
-            close();
-            return;
-        }
-        if (e.code === "Escape") {
+        if(e.target === e.currentTarget || e.code === "Escape") {
             close();
         }
     }
