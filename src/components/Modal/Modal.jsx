@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const modalRoot = document.getElementById("modal-root");
 
 function Modal({close, children}) {
-    const handleClose = (e) => {
+    function handleClose(e) {
         if(e.target === e.currentTarget || e.code === "Escape") {
             close();
         }
