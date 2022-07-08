@@ -5,17 +5,20 @@ import { useEffect } from "react";
 const modalRoot = document.getElementById("modal-root");
 
 function Modal({close, children}) {
-    function handleClose(e) {
+
+    const handleClose = (e) => {
         if(e.target === e.currentTarget || e.code === "Escape") {
             close();
         }
-    }
-    
+    };
+
     useEffect(()=> {
         document.addEventListener("keydown", handleClose);
 
         return ()=> document.removeEventListener("keydown", handleClose)
-    }, []);
+    }, [handleClose]);
+
+  
 
     return (
         createPortal(
